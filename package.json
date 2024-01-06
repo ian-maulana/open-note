@@ -1,0 +1,40 @@
+{
+  "name": "open-note",
+  "version": "1.0.0",
+  "description": "Restful Api for build note app",
+  "main": "index.js",
+  "author": "Ian Maulana",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "nodemon dist/index.js",
+    "dev": "nodemon index.ts",
+    "prepare": "husky install && cp -a .husky/. .git/hooks/",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint:ts": "tsc --pretty --noEmit",
+    "lint:es": "eslint . --ext ts",
+    "lint:all": "yarn run lint:es && yarn run lint:ts"
+  },
+  "devDependencies": {
+    "@eslint-community/eslint-utils": "^4.4.0",
+    "@tsconfig/node18": "^18.2.2",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "husky": "^8.0.3",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.25.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
